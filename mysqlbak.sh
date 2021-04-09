@@ -1,3 +1,10 @@
+##例子一
+backupdir=/opt/mysql_bak
+time=`date +%Y%m%d%H%M` echo -e `date '+%F %T %A'` "Crontab Start \n" >> $backupdir/crontab_mysqlbak_log_`date +'%Y'`.log
+cd /opt/mysql-8.0.23/bin/
+./mysqldump -uroot -p'Nist@110' nist_obr |gzip > $backupdir/nist_obr$(date "+%Y-%m-%d").sql.gz
+
+##例子二
 ## 记录日志
 echo "---------------------------------------------------" >> /serverBack/dbBack/dbBackLog.log
 echo $(date +"%Y-%m-%d %H:%M:%S") "test Database backup start"  >> /serverBack/dbBack/dbBackLog.log
